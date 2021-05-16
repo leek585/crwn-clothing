@@ -1,3 +1,5 @@
+import { UserActionTypes } from "./user.types";
+
 //like this.state in class components
 const INITIAL_STATE = {
   currentUser: null,
@@ -6,7 +8,7 @@ const INITIAL_STATE = {
 //pass INITIAL_STATE as default value if no state defined; but note null is considered a state value
 const userReducer = (state = INITIAL_STATE, action) => {
   switch (action.type) {
-    case "SET_CURRENT_USER":
+    case UserActionTypes.SET_CURRENT_USER:
       return {
         ...state,
         currentUser: action.payload,
